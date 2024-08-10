@@ -50,7 +50,7 @@
 \LoadClass[\papersize,\mainfontsize]{article}
 
 % Set document margins
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
+\usepackage[left=0.6in,top=0.6in,right=0.6in,bottom=0.6in]{geometry}
 
 % Set font face
 \usepackage{fontspec}
@@ -223,8 +223,8 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \notblank{#3}{\toggletrue{centertitledefined}}{}
   \notblank{#4}{\toggletrue{righttitledefined}}{}
   \ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
-    \begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
-      \textbf{#2} & \textbf{#3} & \textbf{#4} \\
+    \begin{tabu} to 1\textwidth { X[l,p] p{0.4\textwidth} X[r,p] }
+      \textbf{#2} & \centering \textbf{#3} & \textbf{#4} \\
     \end{tabu}
     % Add space according to the specidied number of lines
     \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
@@ -238,6 +238,32 @@ Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
   \togglefalse{lefttitledefined}
   \togglefalse{centertitledefined}
   \togglefalse{righttitledefined}
+  \begin{adjustwidth}{\subsectionmargin}{\subsectionmargin}
+}
+{
+  \end{adjustwidth}
+  \vspace*{\aftersubsectionspace}
+}
+\makeatother
+
+% Print a subsection with only a left title
+\makeatletter
+\newenvironment{cvsubsection2}[2][1]{
+  \notblank{#2}{\toggletrue{lefttitledefined}}{}
+  \ifboolexpr{togl {lefttitledefined}}{
+    \begin{tabu} to 1\textwidth { X[l,p] }
+      \textbf{#2} \\
+    \end{tabu}
+    % Add space according to the specified number of lines
+    \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
+      \ifnumcomp{#1}{=}{2}{\vspace*{\afterdoublelinesubsectionheaderspace}}{
+        \vspace*{\aftermultilinesubsectionheaderspace}
+      }
+    }
+  }{
+    \vspace*{\afteremptysubsectionheaderspace}
+  }
+  \togglefalse{lefttitledefined}
   \begin{adjustwidth}{\subsectionmargin}{\subsectionmargin}
 }
 {

@@ -21,15 +21,15 @@
 %% SOFTWARE.
 
 % The font could be set to Windows-specific Calibri by using the 'calibri' option
-\documentclass[]{mcdowellcv}
+\documentclass[calibri]{mcdowellcv}
 
 % For mathematical symbols
 \usepackage{amsmath}
 
 % Set applicant's personal data for header
-\name{Gayle L. McDowell}
-\address{123 Spruce St, Apt 35 \linebreak Philadelphia PA 19103}
-\contacts{(555) 555-1212 \linebreak gayle@careercup.com}
+\name{Andy (Jun Ha) Lee}
+\address{619 Pole Line Rd, Apt 230 \linebreak Davis CA 95618}
+\contacts{(530) 750-9245 \linebreak andyjhlee0530@gmail.com}
 
 \begin{document}
 
@@ -37,70 +37,60 @@
 	\makeheader
 	
 	% Print the content
-	\begin{cvsection}{Employment}
-		\begin{cvsubsection}{Software Engineer, Intern}{Apple Computer}{Summer 2004}
-			iChat AV			
-			\begin{itemize}
-				\item Reduced time to render the user’s buddy list by 75\% by implementing prediction algorithm.
-				\item Implemented iChat integration with OS X Spotlight Search by creating tool which extracts metadata from saved chat transcripts and provides metadata to a system-wide search database.
-				\item Redesigned chat file format and implemented backwards compatibility for search.
-			\end{itemize}
-		\end{cvsubsection}
-		
-		\begin{cvsubsection}{Lead Student Ambassador}{Microsoft Corporation}{Fall 2003 -- Spring 2005}	
-			\begin{itemize}
-				\item Promoted to Lead Student Ambassador in Fall 2004; supervised 10 -- 15 Student Ambassadors.
-				\item Created and taught Computer Science course, CSE 099: Software Design and Development.
-			\end{itemize}
-		\end{cvsubsection}
-		
-		\begin{cvsubsection}{Head Teaching Assistant}{University of Pennsylvania}{Fall 2001 -- Spring 2005}		
-			\begin{itemize}
-				\item Courses: Advanced Java III, Software Engineering, Mathematical Foundations of Computer Science I \& II.
-				\item Promoted to Head TA in Fall 2004; led weekly meetings and supervised four other TAs.
-			\end{itemize}
-		\end{cvsubsection}
-		
-		\begin{cvsubsection}{Software Design Engineer, Intern}{Microsoft Corporation}{Summers 2001 -- 2003}
-			Visual Studio Core (Summer 2003)		
-			\begin{itemize}
-				\item Implemented a user interface for the VS open file switcher (ctrl-tab) and extended it to tool windows.
-				\item Created service to provide gradient across VS and VS add-ins. Optimized service via caching.
-			\end{itemize}
-			Programmer Productivity Research Center (Summers 2001, 2002)
-			\begin{itemize}
-				\item Built app to compute similarity of all methods in a code base; reduced time from $O(n^2)$ to $O(n\ log\ n)$. 
-				\item Created test case generation tool which creates random XML docs from XML Schema.
-			\end{itemize}
-		\end{cvsubsection}
-	\end{cvsection}
-	
 	\begin{cvsection}{Education}
-		\begin{cvsubsection}{Philadelphia, PA}{University of Pennsylvania}{Fall 2000 -- May 2005}
+		\begin{cvsubsection}{University of California, Davis}{Davis, CA}{September 2024}
 			\begin{itemize}
-				\item M.S.E. in Computer and Information Science, May 2005. GPA: 3.6
-				\item B.S.E. in Computer Science Engineering with Minor in Mathematics, May 2005.  In-major GPA: 3.4.
-				\item Graduate Coursework: Software Foundations; Computer Architecture; Algorithms; Artificial Intelligence; Comparison of Learning Algorithms; Computational Theory.
-				\item Undergraduate Coursework: Operating Systems; Databases; Algorithms; Programming Languages; Comp. Architecture; Engineering Entrepreneurship; Calculus III.
+				\item B.S. in Computer Science, Minor in Statistics
+				\item Dean's Honor List: Spring 2019, Winter 2022, Winter 2023
+				\item Related Coursework: Machine Learning; Artificial Intelligence; Computational Linguistics; Algorithms Design \& Analysis; Statistical Data Science; Programming Languages; Sampling Theory; Vector Analysis
+			\end{itemize}
+		\end{cvsubsection}
+	\end{cvsection}
+
+	\begin{cvsection}{Employment}
+		\begin{cvsubsection}{Amazon}{Software Development Engineer, Intern}{Summer 2023}			
+			\begin{itemize}
+				\item Developed a Random Forest ML recommender that accurately predicted user engagement for over 80\% of cases, enhancing user experience
+				\item Engineered a machine learning recommendation pipeline leveraging AWS services, including SageMaker, S3, Lambda
+				\item Utilized Spark to preprocess customer engagement data, optimizing it for use in the ML content recommender
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
 	
-	\begin{cvsection}{Technical Experience}
-		\begin{cvsubsection}{Projects}{}{}
+	\begin{cvsection}{Technical Projects}
+		\begin{cvsubsection2}{Game AI Optimality and Efficiency Research}
 			\begin{itemize}
-				\item \textbf{Multi-User Drawing Tool} (2004). Electronic classroom where multiple users can view and simultaneously draw on a “chalkboard” with each person’s edits synchronized.  C++, MFC
-				\item \textbf{Synchronized Calendar} (2003 – 2004). Desktop calendar with globally shared and synchronized calendars, allowing users to schedule meetings with other users.  C\#.NET, SQL, XML
-				\item \textbf{Operating System} (2002).  UNIX-style OS with scheduler, file system, text editor and calculator. C
+				\item Implemented Minimax, Expectimax, and MCTS algorithms for AI in a checkers game interface
+				\item Enhanced the efficiency of Minimax AI by incorporating alpha-beta pruning, leading to a significant reduction in a computational overhead
+				\item Developed a game-specific evaluation function, integrating Chebyshev distance and vertical cost considerations, to accurately asses the current game state
+				\item Conducted research demonstrating the superior optimality of Expectimax AI in stochastic enviornments compared to Minimax AI, witha focus on balancing the tradeoff between efficiency and optimality
 			\end{itemize}
-		\end{cvsubsection}
+		\end{cvsubsection2}
+
+		\begin{cvsubsection2}{ML-Based Model for Hotel Reservation Cancellation Prediction}
+			\begin{itemize}
+				\item Developed and fine-tuned machine learning models to predict hotel reservation cancellation using customer booking data
+				\item Explored multiple algorithms including Neural Net Model and Logistic Regression
+				\item Performed data preprocessing, feature engineering, and hyperparameter tuning to enhance model performance
+				\item Evaluated models based on precision, recall, and accuracy metrics, with a focus on improving predictive accuracy
+			\end{itemize}
+		\end{cvsubsection2}
+
+		\begin{cvsubsection2}{Comprehensive Statistical Analysis of Dietary Impact on Health Using R}
+			\begin{itemize}
+				\item Analyzed the Nutrition Study dataset with 315 subjects to explore relationships between dietary intake, health status, and lifestyle factors
+				\item Investigated the correlation between dietary beta carotene and plasma retinol using Spearman's rank correlation
+				\item Compared dietary variables and health status across smoker groups and between genders using Kruskal-Wallis and Mann-Whitney-Wilcoxon tests
+				\item Performed statistical analysis using R, including Shapiro-Wilk tests for normality and non-parametrics tests for group comparisons
+			\end{itemize}
+		\end{cvsubsection2}
 	\end{cvsection}
 	
-	\begin{cvsection}{Additional Experience and Awards}
+	\begin{cvsection}{Additional Experiences}
 		\begin{cvsubsection}{}{}{}	
 			\begin{itemize}
-				\item \textbf{Instructor (2003 – 2005):} Taught two full-credit Computer Science courses; average ratings of 4.8 out of 5.0.
-				\item \textbf{Third Prize, Senior Design Projects:} Awarded 3rd prize for Synchronized Calendar project, out of 100 projects.
+				\item \textbf{Instructor (2018 – 2021):} Taught highschool and SAT mathematics, physics, and chemistry
+				\item \textbf{Satellite Operator (2019 - 2021):} Operated and managed satellite communication channel for the ROK Army
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
@@ -108,8 +98,8 @@
 	\begin{cvsection}{Languages and Technologies}
 		\begin{cvsubsection}{}{}{}	
 			\begin{itemize}
-				\item C++; C; Java; Objective-C; C\#.NET; SQL; JavaScript; XSLT; XML (XSD) Schema 
-				\item Visual Studio; Microsoft SQL Server; Eclipse; XCode; Interface Builder
+				\item AWS SageMaker; TensorFlow; Pycharm; Scikit-learn; Keras
+				\item Python; C++; C; Java; R; SQL; JavaScript; JSON 
 			\end{itemize}
 		\end{cvsubsection}
 	\end{cvsection}
